@@ -1,15 +1,15 @@
-#Commento in data 22/12/2021
+# Commento in data 22/12/2021
 
 Questo è il mio progetto di deep learning concluso in data 27/01/2020.
 Ricarico questo progetto su GitHub a fini di backup.
 Non inserisco però il dataset che mi era stato fornito dal professore.
 
-##PROGETTO DI DEEP LEARNING - FILIPPO LANDI matr. 121120 - UNIFE
+## PROGETTO DI DEEP LEARNING - FILIPPO LANDI matr. 121120 - UNIFE
 
 Nel seguente file parlo dei principali punti del progetto, più o meno in ordine cronologico di
 implementazione:
 
-###CONSIDERAZIONI INIZIALI
+### CONSIDERAZIONI INIZIALI
 
 Ho installato Python 3.7 anche se la versione 3.8 è già disponibile ma tensorflow non lo era ancora (al tempo)
 per tale versione.  
@@ -24,7 +24,7 @@ Poi ci sono altri argomenti come '-a numeromaggiore di 0' per indicare se si vuo
 che viene comunque salvato ma con il generico nome 'plot'.
 Dentro AUG_D ci sono degli esempi di dati aumentati per vedere il risultato dovuto alla trasformazione.
 
-###IMPLEMENTAZIONE DELLA RETE
+### IMPLEMENTAZIONE DELLA RETE
 
 Essenzialmente fine tuning di una rete data in un tutorial di image recognition della Google, 
 eseguiva una classificazione binaria per classificare cani e gatti.
@@ -45,7 +45,7 @@ argomento con '-n numeroturni').
 Per maggiori informazioni sulla rete iniziale della Google:
 https://www.tensorflow.org/tutorials/images/classification
 
-###SETUP DATI E DATA AUGMENTATION
+### SETUP DATI E DATA AUGMENTATION
 
 Inizialmente usavo la libreria di keras 'ImageDataGenerator' poiché davvero semplice per leggere le immagini 
 e caricarle nel modello con label ed eseguire data augmentation.
@@ -69,7 +69,7 @@ la rete poiché certe volte reputo che le trasformazioni siano un po' troppo dis
 opzioni non ho messo il flip orizzontale perché non mi pareva sensato.  
 Nel primo link di questa sezione ci sono scritte le varie trasformazioni se si vogliono maggiori info.
 
-###DATA AUGMENTATION PIÙ IN SPECIFICO
+### DATA AUGMENTATION PIÙ IN SPECIFICO
   
 Ho voluto eseguire un aumento "on the fly" cioè una modifica dei dati mentre venivano dati alla rete.
 Quindi vengono presi i dati di training e trasformati casualmente con i parametri dati e dati in pasto alla rete.
@@ -78,7 +78,7 @@ https://www.pyimagesearch.com/2019/07/08/keras-imagedatagenerator-and-data-augme
 Da questo articolo inoltre deriva buona parte del progetto: l'implementazione di argomenti, come leggere i dati e dividere
 il training e il test set, ottimizzatore SGD (anche se adam funzionava benissimo), plot e valutazioni.
 
-###IMPLEMENTAZIONE KFOLD
+### IMPLEMENTAZIONE KFOLD
 
 Ho letto un po' di questo 'tutorial' e ho implementato la kfold vanilla:
 https://scikit-learn.org/stable/modules/cross_validation.html
@@ -86,7 +86,7 @@ Ho lasciato i parametri di default (5 fold) tranne il parametro shuffle attivato
 cui funziona la validazione, se no all'inizio la validazione opererebbe su dati completamente non visti: si può togliere
 lo shuffle e si vedrà che all'inizio l'accuracy partirà da 0 (non proprio ma un valore molto piccolo) per questo.
 
-###MODIFICA MANUALE DEL DATASET
+### MODIFICA MANUALE DEL DATASET
 
 Ho preso come modello il dataset MNIST dove c'è un rapporto 6:1 tra i dati di training e test.
 Ho notato che gli esempi originali di test del numero 7 erano contenuti nel training, non andava bene,
@@ -98,7 +98,7 @@ training e scegliere delle immagini che mi sembravano le più appropriate per il
 Per info sui dati MNIST:
 http://yann.lecun.com/exdb/mnist/
 
-###SALVATAGGIO RETE
+### SALVATAGGIO RETE
 
 Implementazione molto molto semplice che salva i parametri allenabili della rete a fine allenamento, 
 si può allenare la rete o caricare i pesi e vedere le statistiche della rete sui dati di test.  
