@@ -36,7 +36,7 @@ Come ottimizzatori ho provato sia la adam con parametri di default che la SGD co
 La adam converge molto più in fretta ma la SGD sembra far raggiungere alla rete una precisione maggiore dopo 100 'turni' di allenamento,
 dico turni perché ho messo che le epoche sono fatte per ogni fold mentre i turni sono un ciclo esterno che fa ripetere il procedimento.   
 Non ho giocato molto con gli ottimizzatori perché mi pareva che i risultati fossero già buoni ma per maggiori info qui ci sono varie opzioni:  
-https://keras.io/optimizers/
+https://keras.io/optimizers/  
 Come detto mi sono fermato qui perché la rete in test funzionava già bene 96-98% accuracy a seconda dell'allenamento, parametri leggermente 
 differenti etc.   
 Anche per questo non ho preso in considerazione early stopping, semplicemente salvo dopo 100 turni (che si possono indicare a riga come
@@ -48,7 +48,7 @@ https://www.tensorflow.org/tutorials/images/classification
 
 Inizialmente usavo la libreria di keras 'ImageDataGenerator' poiché davvero semplice per leggere le immagini 
 e caricarle nel modello con label ed eseguire data augmentation.  
-https://keras.io/preprocessing/image/
+https://keras.io/preprocessing/image/  
 
 Successivamente per le problematiche riscontrate con il mio desiderio di implementare la kfold sono passato
 ad una implementazione più classica che appoggia su scikit learn e opencv.  
